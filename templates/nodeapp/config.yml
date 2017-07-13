@@ -1,0 +1,5 @@
+name: NodeJS Example App
+version: 0.2.0
+maintainer: Luis Urrea <lfurrea@gmail.com>
+category: Messaging
+description: "A useless nodejs hello world"

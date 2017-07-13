@@ -1,0 +1,17 @@
+.catalog:
+  name: NodeJS app
+  version: 0.2.0
+  description: "A useless hello world app"
+  questions:
+    - variable: MY_MESSAGE
+    label: Message
+    description: What do you want to say?
+    default: "Hello Rancher World!"
+    required: true
+    type: string
+
+nginx:
+  scale: 1
+
+node1:
+  scale: 1
