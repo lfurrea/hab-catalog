@@ -1,7 +1,7 @@
 nginx:
   image: lfurrea/nginx
   links:
-    - node1:app
+    - node1:node1
 
 node1:
   image: lfurrea/mytutorialapp
