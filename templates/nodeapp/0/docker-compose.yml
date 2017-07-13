@@ -1,5 +1,5 @@
 nginx:
-  image: lfurrea/nginx
+  image: lfurrea/nginx:0.2.1
   links:
     - node1:node1
   ports:

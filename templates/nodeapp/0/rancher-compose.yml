@@ -16,4 +16,4 @@ nginx:
   scale: 1
 
 node1:
-  scale: 1
+  scale: 3
