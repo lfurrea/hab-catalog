@@ -2,9 +2,13 @@ nginx:
   image: lfurrea/nginx:0.2.3
   ports:
     - "80:80"
+  labels:
+    io.rancher.container.pull_image: always
 node:
   image: lfurrea/mytutorialapp
   environment:
     HAB_MYTUTORIALAPP: 'message="${MY_MESSAGE}"'
   ports:
     - "8080"
+  labels:
+    io.rancher.container.pull_image: always
