@@ -1,5 +1,5 @@
 nginx:
-  image: lfurrea/nginx
+  image: lfurrea/nginx:0.2.3
   ports:
     - "80:80"
 node:
