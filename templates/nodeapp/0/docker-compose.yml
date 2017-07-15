@@ -1,10 +1,8 @@
 nginx:
   image: lfurrea/nginx
-  links:
-    - node1:node1
   ports:
     - "80:80"
-node1:
+node:
   image: lfurrea/mytutorialapp
   environment:
     HAB_MYTUTORIALAPP: 'message=${MY_MESSAGE}'
