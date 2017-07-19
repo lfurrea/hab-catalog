@@ -11,7 +11,7 @@ node:
   image: lfurrea/mytutorialapp
   command:
   - "--group"
-  - "app"
+  - "prod"
   environment:
     HAB_MYTUTORIALAPP: 'message="${MY_MESSAGE}"'
   ports:
