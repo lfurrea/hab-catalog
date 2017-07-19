@@ -1,11 +1,17 @@
 nginx:
   image: lfurrea/nginx
+  command:
+  - "--bind"
+  - "app:app.default"
   ports:
     - "80:80"
   labels:
     io.rancher.container.pull_image: always
 node:
   image: lfurrea/mytutorialapp
+  command:
+  - "--group"
+  - "app"
   environment:
     HAB_MYTUTORIALAPP: 'message="${MY_MESSAGE}"'
   ports:
