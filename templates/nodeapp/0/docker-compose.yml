@@ -2,7 +2,7 @@ nginx:
   image: lfurrea/nginx
   command:
   - "--bind"
-  - "app:app.default"
+  - "app:mytutorialapp.prod"
   ports:
     - "80:80"
   labels:
