@@ -23,7 +23,7 @@ node:
   - "--group"
   - "prod"
   - "--peer"
-  - "app-node-initial"
+  - "app-node-initial-1"
   environment:
     HAB_MYTUTORIALAPP: 'message="${MY_MESSAGE}"'
   ports:
@@ -40,7 +40,7 @@ nginx:
   - "--bind"
   - "app:mytutorialapp.prod"
   - "--peer"
-  - "app-node-initial"
+  - "app-node-initial-1"
   ports:
     - "80:80"
     - "9638/udp"
