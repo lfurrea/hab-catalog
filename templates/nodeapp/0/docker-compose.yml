@@ -5,6 +5,8 @@ nginx:
   - "app:mytutorialapp.prod"
   ports:
     - "80:80"
+    - "9638/udp"
+    - 9631
   labels:
     io.rancher.container.pull_image: always
 node:
@@ -16,5 +18,7 @@ node:
     HAB_MYTUTORIALAPP: 'message="${MY_MESSAGE}"'
   ports:
     - "8080"
+    - "9638/udp"
+    - "9631"
   labels:
     io.rancher.container.pull_image: always
