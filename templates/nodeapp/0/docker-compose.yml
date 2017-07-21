@@ -1,17 +1,8 @@
-nginx:
-  image: lfurrea/nginx
-  command:
-  - "--bind"
-  - "app:mytutorialapp.prod"
-  ports:
-    - "80:80"
-    - "9638/udp"
-    - 9631
-  labels:
-    io.rancher.container.pull_image: always
-node:
+node-initial:
   image: lfurrea/mytutorialapp
   command:
+  - "--topology"
+  - "leader"
   - "--group"
   - "prod"
   environment:
@@ -20,5 +11,39 @@ node:
     - "8080"
     - "9638/udp"
     - "9631"
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.container.hostname_override: container_name
+
+node:
+  image: lfurrea/mytutorialapp
+  command:
+  - "--topology"
+  - "leader"
+  - "--group"
+  - "prod"
+  - "--peer"
+  - "app-node-initial"
+  environment:
+    HAB_MYTUTORIALAPP: 'message="${MY_MESSAGE}"'
+  ports:
+    - "8080"
+    - "9638/udp"
+    - "9631"
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.container.hostname_override: container_name
+    
+nginx:
+  image: lfurrea/nginx
+  command:
+  - "--bind"
+  - "app:mytutorialapp.prod"
+  - "--peer"
+  - "app-node-initial"
+  ports:
+    - "80:80"
+    - "9638/udp"
+    - 9631
   labels:
     io.rancher.container.pull_image: always
