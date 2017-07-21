@@ -6,8 +6,8 @@ node-initial:
   - "--group"
   - "prod"
   environment:
-    - HAB_GOSSIP_SUBNET: "inet 10.42"
-    - RUST_LOG: debug
+    HAB_GOSSIP_SUBNET: "inet 10.42"
+    RUST_LOG: debug
   ports:
     - "8080"
     - "9638/udp"
@@ -26,8 +26,8 @@ node:
   - "--peer"
   - "app-node-initial-1"
   environment:
-    - HAB_GOSSIP_SUBNET: "inet 10.42"
-    - RUST_LOG: debug
+    HAB_GOSSIP_SUBNET: "inet 10.42"
+    RUST_LOG: debug
   ports:
     - "8080"
     - "9638/udp"
@@ -44,8 +44,8 @@ nginx:
   - "--peer"
   - "app-node-initial-1"
   environment:
-    - HAB_GOSSIP_SUBNET: "inet 10.42"
-    - RUST_LOG: debug
+    HAB_GOSSIP_SUBNET: "inet 10.42"
+    RUST_LOG: debug
   ports:
     - "80:80"
     - "9638/udp"
