@@ -6,8 +6,8 @@ node-initial:
   - "--group"
   - "prod"
   environment:
-    HAB_MYTUTORIALAPP: 'message="${MY_MESSAGE}"'
-    HAB_GOSSIP_SUBNET: "inet 10.42"
+    - HAB_MYTUTORIALAPP: 'message="${MY_MESSAGE}"'
+    - HAB_GOSSIP_SUBNET: "inet 10.42"
   ports:
     - "8080"
     - "9638/udp"
@@ -26,8 +26,8 @@ node:
   - "--peer"
   - "app-node-initial-1"
   environment:
-    HAB_MYTUTORIALAPP: 'message="${MY_MESSAGE}"'
-    HAB_GOSSIP_SUBNET: "inet 10.42"
+    - HAB_MYTUTORIALAPP: 'message="${MY_MESSAGE}"'
+    - HAB_GOSSIP_SUBNET: "inet 10.42"
   ports:
     - "8080"
     - "9638/udp"
