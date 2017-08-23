@@ -1,0 +1,46 @@
+couch-initializer:
+  image: lfurrea/apache-couchdb
+  command:
+  - "--topology"
+  - "initializer"
+  - "--listen-peer"
+  - "0.0.0.0"
+  - "--group"
+  - "dev"
+  environment:
+    HAB_GOSSIP_SUBNET: "inet 10.42"
+    RUST_LOG: debug
+  ports:
+    - "5984"
+    - "5986"
+    - "4369"
+    - "9638/udp"
+    - "9631"
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.container.hostname_override: container_name
+
+couch-follower:
+  image: lfurrea/apache-couchdb
+  command:
+  - "--topology"
+  - "initializer"
+  - "--listen-peer"
+  - "0.0.0.0"
+  - "--peer"  
+  - "kazoo-couch-initializer-1"
+  - "--group"
+  - "dev"
+  environment:
+    HAB_GOSSIP_SUBNET: "inet 10.42"
+    RUST_LOG: debug
+  ports:
+    - "5984"
+    - "5986"
+    - "4369"
+    - "9638/udp"
+    - "9631"
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.container.hostname_override: container_name
+    

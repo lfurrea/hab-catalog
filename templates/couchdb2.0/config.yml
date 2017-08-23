@@ -1,0 +1,5 @@
+name: Apache CouchDB 2.0 Cluster
+version: 0.1.0
+maintainer: Luis Urrea <lfurrea@gmail.com>
+category: NoSQL
+description: "Apache CouchDB 2.0 cluster"

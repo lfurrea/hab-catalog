@@ -1,0 +1,19 @@
+.catalog:
+  name: CouchDB Cluster
+  version: 0.1.0
+  description: "3 node couchdb cluster"
+  questions:
+    - variable: MY_MESSAGE
+      label: Message
+      description: |
+        What do you want to say?.
+        To the world.
+      default: "Hello Rancher World!"
+      required: true
+      type: string
+
+couch-init:
+  scale: 1
+
+couch-follow:
+  scale: 2
