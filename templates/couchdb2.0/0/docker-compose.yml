@@ -2,7 +2,7 @@ couch-initializer:
   image: lfurrea/apache-couchdb
   command:
   - "--topology"
-  - "initializer"
+  - "leader"
   - "--group"
   - "dev"
   environment:
@@ -22,7 +22,7 @@ couch-follower:
   image: lfurrea/apache-couchdb
   command:
   - "--topology"
-  - "initializer"
+  - "leader"
   - "--peer"  
   - "kazoo-couch-initializer-1"
   - "--group"
