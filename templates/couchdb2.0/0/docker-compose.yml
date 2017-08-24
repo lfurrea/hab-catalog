@@ -3,8 +3,6 @@ couch-initializer:
   command:
   - "--topology"
   - "initializer"
-  - "--listen-peer"
-  - "0.0.0.0"
   - "--group"
   - "dev"
   environment:
@@ -25,8 +23,6 @@ couch-follower:
   command:
   - "--topology"
   - "initializer"
-  - "--listen-peer"
-  - "0.0.0.0"
   - "--peer"  
   - "kazoo-couch-initializer-1"
   - "--group"

@@ -12,8 +12,8 @@
       required: true
       type: string
 
-couch-init:
+couch-initializer:
   scale: 1
 
-couch-follow:
+couch-follower:
   scale: 2
